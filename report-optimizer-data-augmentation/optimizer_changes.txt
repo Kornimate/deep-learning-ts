@@ -1,0 +1,39 @@
+state:
+	32x32 images
+	2 linear layer classifier
+	no batch normalization
+	bs = 64  # batch size
+	lr = 0.01  # learning rate
+	epochs = 20  # number of epochs
+
+1. only SGD, no momentum, no lr_scheduler:
+	last epoch and final:
+		train Loss: 131.5234 Acc: 27.5556
+		val Loss: 124.1323 Acc: 29.7024
+		Training complete in 6m 29s
+		Best val Acc: 29.702381
+		
+2. adam, no momentum, no lr_scheduler:
+	last epoch and final:
+		train Loss: 128.1161 Acc: 31.2402
+		val Loss: 130.4620 Acc: 31.4524
+		Training complete in 6m 35s
+		Best val Acc: 31.452381
+
+3. SGD + momentum, (momentum = 0.9):
+	train Loss: 83.1061 Acc: 39.8769
+	val Loss: 90.4467 Acc: 37.6786
+	Training complete in 5m 30s
+	Best val Acc: 37.678571
+
+4. SGD + momentum + lrs (step_size=3) exponential lrs:
+	train Loss: 122.3019 Acc: 29.7207
+	val Loss: 117.0849 Acc: 31.2024
+	Training complete in 5m 52s
+	Best val Acc: 31.428571
+
+5. SGD + momentum + lrs cyclical learning rate:
+	train Loss: 85.0169 Acc: 39.0931
+	val Loss: 86.2234 Acc: 38.5238
+	Training complete in 4m 30s
+	Best val Acc: 38.523831

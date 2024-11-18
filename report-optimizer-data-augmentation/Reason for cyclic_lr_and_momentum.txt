@@ -1,0 +1,4 @@
+When using a cyclical learning rate scheduler like CyclicLR:
+
+Momentum can complement learning rate oscillations by helping maintain consistency in updates when the learning rate is at its lower end.
+It’s recommended to disable cyclical adjustments to momentum (cycle_momentum=False) if your optimizer already benefits from a well-tuned momentum value (e.g., momentum=0.9 for SGD).
